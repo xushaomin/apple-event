@@ -14,10 +14,10 @@ public class EventListener extends ObjectMessageConsumer {
 	public void processMessage(Object message) {
 		if(message instanceof ApplicationEvent) {
 			ApplicationEvent event = (ApplicationEvent) message;
-			EventHandler.publishEvent(event);
+			EventMulticaster.publishEvent(event);
 		}
 		else {
-			EventHandler.publishEvent(message);
+			EventMulticaster.publishEvent(message);
 		}
 	}
 

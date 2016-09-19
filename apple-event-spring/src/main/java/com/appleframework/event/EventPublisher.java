@@ -10,12 +10,12 @@ import org.springframework.context.ApplicationEvent;
  * 事件系统
  */
 
-public class EventHandler implements ApplicationContextAware, DisposableBean {
+public class EventPublisher implements ApplicationContextAware, DisposableBean {
 
 	private static ApplicationContext applicationContext = null;
 
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		EventHandler.applicationContext = applicationContext;
+		EventPublisher.applicationContext = applicationContext;
 	}
 	
 	public void destroy() throws Exception {

@@ -10,12 +10,12 @@ import com.appleframework.jms.core.producer.MessageProducer;
  * 事件系统
  */
 
-public class EventPublish {
+public class EventPublisher {
 
 	private static MessageProducer messageProducer = null;
 	
 	public static void setMessageProducer(MessageProducer messageProducer) {
-		EventPublish.messageProducer = messageProducer;
+		EventPublisher.messageProducer = messageProducer;
 	}
 
 	public static void publishEvent(ApplicationEvent event) {
