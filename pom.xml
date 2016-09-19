@@ -89,7 +89,7 @@
 		<module>apple-event-kafka</module>
 	</modules>
 
-<build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -152,11 +152,11 @@
 			</activation>
 			<distributionManagement>
 				<repository>
-					<id>apple-releases</id>
+					<id>nexus-releases</id>
 					<url>http://mvnrepo.appleframework.com:8081/nexus/content/repositories/releases/</url>
 				</repository>
 				<snapshotRepository>
-					<id>apple-snapshots</id>
+					<id>nexus-snapshots</id>
 					<url>http://mvnrepo.appleframework.com:8081/nexus/content/repositories/snapshots/</url>
 				</snapshotRepository>
 			</distributionManagement>
