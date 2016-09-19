@@ -152,11 +152,11 @@
 			</activation>
 			<distributionManagement>
 				<repository>
-					<id>nexus-releases</id>
+					<id>apple-releases</id>
 					<url>http://mvnrepo.appleframework.com:8081/nexus/content/repositories/releases/</url>
 				</repository>
 				<snapshotRepository>
-					<id>nexus-snapshots</id>
+					<id>apple-snapshots</id>
 					<url>http://mvnrepo.appleframework.com:8081/nexus/content/repositories/snapshots/</url>
 				</snapshotRepository>
 			</distributionManagement>
