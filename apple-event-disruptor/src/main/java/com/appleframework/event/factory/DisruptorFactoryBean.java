@@ -24,8 +24,12 @@ public class DisruptorFactoryBean implements FactoryBean<Disruptor<ObjectEvent>>
 		return false;
 	}
 
-	public void setObjectEventHandler(ObjectEventHandler objectEventHandler) {
-		DisruptorFactory.setObjectEventHandler(objectEventHandler);
+	public void setEventHandler(ObjectEventHandler eventHandler) {
+		DisruptorFactory.setEventHandler(eventHandler);
+	}
+	
+	public void setBufferSize(int bufferSize) {
+		DisruptorFactory.setBufferSize(bufferSize);
 	}
 
 	public void destroy() {

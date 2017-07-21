@@ -6,7 +6,7 @@ public class AppTest {
 	
 	public static void main(String[] args) {
 		TestHandler handler = new TestHandler();
-		DisruptorFactory.setObjectEventHandler(handler);
+		DisruptorFactory.setEventHandler(handler);
 		
 		for (int i = 0; i < 10000; i++) {
 			EventPublisher.publishEvent(i + "");

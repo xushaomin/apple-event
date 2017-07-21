@@ -13,27 +13,32 @@ public class DisruptorFactory {
 
 	private static Disruptor<ObjectEvent> disruptor;
 
-	private static ObjectEventHandler objectEventHandler;
+	private static ObjectEventHandler eventHandler;
+	
+	private static int bufferSize = 1024;
 
 	@SuppressWarnings({ "unchecked", "deprecation" })
 	public static Disruptor<ObjectEvent> getInstance() {
 		if (disruptor == null) {
 			Executor executor = Executors.newCachedThreadPool();
-			int bufferSize = 1024;
 			disruptor = new Disruptor<>(ObjectEvent::new, bufferSize, executor, ProducerType.SINGLE,
 					new LiteBlockingWaitStrategy());
-			disruptor.handleEventsWith(objectEventHandler);
+			disruptor.handleEventsWith(eventHandler);
 			disruptor.start();
 		}
 		return disruptor;
 	}
-
-	public static void setObjectEventHandler(ObjectEventHandler objectEventHandler) {
-		DisruptorFactory.objectEventHandler = objectEventHandler;
-	}
 	
+	public static void setEventHandler(ObjectEventHandler eventHandler) {
+		DisruptorFactory.eventHandler = eventHandler;
+	}
+
 	public static void destroy() {
 		DisruptorFactory.disruptor.shutdown();
+	}
+
+	public static void setBufferSize(int bufferSize) {
+		DisruptorFactory.bufferSize = bufferSize;
 	}
 
 }
