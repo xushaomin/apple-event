@@ -14,7 +14,7 @@ public class EventPublisher {
 
 	private static MessageProducer messageProducer = null;
 	
-	public static void setMessageProducer(MessageProducer messageProducer) {
+	public void setMessageProducer(MessageProducer messageProducer) {
 		EventPublisher.messageProducer = messageProducer;
 	}
 
