@@ -88,8 +88,8 @@
 		<module>apple-event-core</module>
 		<module>apple-event-spring</module>
 		<module>apple-event-kafka</module>
-    <module>apple-event-disruptor</module>
-  </modules>
+    	<module>apple-event-disruptor</module>
+  	</modules>
 
 	<build>
 		<plugins>
