@@ -5,6 +5,7 @@ import java.util.concurrent.Executors;
 
 import com.appleframework.event.ObjectEvent;
 import com.appleframework.event.ObjectEventHandler;
+import com.lmax.disruptor.EventFactory;
 import com.lmax.disruptor.LiteBlockingWaitStrategy;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ProducerType;
@@ -21,7 +22,8 @@ public class DisruptorFactory {
 	public static Disruptor<ObjectEvent> getInstance() {
 		if (disruptor == null) {
 			Executor executor = Executors.newCachedThreadPool();
-			disruptor = new Disruptor<>(ObjectEvent::new, bufferSize, executor, ProducerType.SINGLE,
+			EventFactory<ObjectEvent> eventFactory = new ObjectEventFactory();
+			disruptor = new Disruptor<>(eventFactory, bufferSize, executor, ProducerType.SINGLE,
 					new LiteBlockingWaitStrategy());
 			disruptor.handleEventsWith(eventHandler);
 			disruptor.start();
