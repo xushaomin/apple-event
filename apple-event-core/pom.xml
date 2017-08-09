@@ -6,13 +6,17 @@
 	<parent>
 		<groupId>com.appleframework.event</groupId>
 		<artifactId>apple-event</artifactId>
-		<version>0.0.1.RELEASE</version>
+		<version>0.0.2.RELEASE</version>
 	</parent>
 	<artifactId>apple-event-core</artifactId>
 	<name>apple-event-core</name>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
