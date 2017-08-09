@@ -8,7 +8,17 @@ import com.lmax.disruptor.RingBuffer;
 /**
  * 事件系统
  */
-public class EventPublisher {
+public class EventPublisher implements IEventPublisher {
+
+	@Override
+	public void publishApplicationEvent(ApplicationEvent event) {
+		publishEvent(event);
+	}
+
+	@Override
+	public void publishObjectEvent(Object event) {
+		publishEvent((Object) event);
+	}
 
 	public static void publishEvent(ApplicationEvent object) {
 		publishEvent((Object) object);
