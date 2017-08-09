@@ -21,11 +21,11 @@ public class EventPublisher implements IEventPublisher, ApplicationContextAware,
 		applicationContext = null;
 	}
 
-	public void publishApplicationEvent(ApplicationEvent event) {
+	public void publish(ApplicationEvent event) {
 		applicationContext.publishEvent(event);;
 	}
 	
-	public void publishObjectEvent(Object event) {
+	public void publish(Object event) {
 		applicationContext.publishEvent(event);;
 	}
 	

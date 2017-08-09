@@ -11,12 +11,12 @@ import com.lmax.disruptor.RingBuffer;
 public class EventPublisher implements IEventPublisher {
 
 	@Override
-	public void publishApplicationEvent(ApplicationEvent event) {
+	public void publish(ApplicationEvent event) {
 		publishEvent(event);
 	}
 
 	@Override
-	public void publishObjectEvent(Object event) {
+	public void publish(Object event) {
 		publishEvent((Object) event);
 	}
 

@@ -31,12 +31,12 @@ public class EventPublisher implements IEventPublisher {
 	}
 
 	@Override
-	public void publishApplicationEvent(ApplicationEvent event) {
+	public void publish(ApplicationEvent event) {
 		messageProducer.sendObject(topic, event.getClass().getName(), event);
 	}
 
 	@Override
-	public void publishObjectEvent(Object event) {
+	public void publish(Object event) {
 		messageProducer.sendObject(topic, event.getClass().getName(), (Serializable) event);
 	}
 

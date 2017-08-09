@@ -8,8 +8,8 @@ import org.springframework.context.ApplicationEvent;
 
 public interface IEventPublisher {
 
-	public void publishApplicationEvent(ApplicationEvent event);
+	public void publish(ApplicationEvent event);
 	
-	public void publishObjectEvent(Object event);
+	public void publish(Object event);
 
 }
