@@ -25,19 +25,35 @@ public class EventPublisher implements IEventPublisher {
 	public static void publishEvent(ApplicationEvent event) {
 		messageProducer.sendObject(topic, event.getClass().getName(), event);
 	}
+	
+	public static void publishEvent(ApplicationEvent event, String key) {
+		messageProducer.sendObject(topic, key, event);
+	}
 
 	public static void publishEvent(Object event) {
 		messageProducer.sendObject(topic, event.getClass().getName(), (Serializable) event);
+	}
+	
+	public static void publishEvent(Object event, String key) {
+		messageProducer.sendObject(topic, key, (Serializable) event);
 	}
 
 	@Override
 	public void publish(ApplicationEvent event) {
 		messageProducer.sendObject(topic, event.getClass().getName(), event);
 	}
+	
+	public void publish(ApplicationEvent event, String key) {
+		messageProducer.sendObject(topic, key, event);
+	}
 
 	@Override
 	public void publish(Object event) {
 		messageProducer.sendObject(topic, event.getClass().getName(), (Serializable) event);
+	}
+	
+	public void publish(Object event, String key) {
+		messageProducer.sendObject(topic, key, (Serializable) event);
 	}
 
 }
