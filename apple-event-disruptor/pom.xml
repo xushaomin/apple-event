@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.appleframework.event</groupId>
 		<artifactId>apple-event</artifactId>
-		<version>0.0.3.RELEASE</version>
+		<version>0.0.4.RELEASE</version>
 	</parent>
 	<artifactId>apple-event-disruptor</artifactId>
 	<name>apple-event-disruptor</name>
